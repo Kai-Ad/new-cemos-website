@@ -5,6 +5,7 @@ import './globals.css' // CRITICAL: This line must be here
 import Header from '@/components/Header'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import Footer from '@/components/Footer'
+import Section from '@/components/Section'
 
 // This loads the Inter font
 const inter = Inter({
@@ -33,7 +34,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main>{children}</main>
+          <main>
+            <Section>
+              {children}
+            </Section>
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

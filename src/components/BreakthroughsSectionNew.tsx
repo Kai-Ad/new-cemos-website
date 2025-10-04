@@ -43,7 +43,16 @@ const BreakthroughsSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <BreakthroughCard {...breakthrough} />
+              <BreakthroughCard
+                title={breakthrough.title}
+                description={breakthrough.description}
+                tags={[...breakthrough.tags]}
+                imageUrl={breakthrough.imageUrl}
+                readMoreUrl={breakthrough.readMoreUrl}
+                stats={breakthrough.stats}
+                team={breakthrough.team}
+                color={breakthrough.color}
+              />
             </motion.div>
           ))}
         </div>
@@ -69,18 +78,6 @@ const BreakthroughsSection = () => {
       {/* Decorative Elements */}
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
-              title={item.title}
-              description={item.description}
-              link={item.link}
-            />
-          ))}
-        </div>
-        <div className="text-center mt-16">
-           <button className="px-6 py-3 border border-light-accent dark:border-dark-accent text-light-accent dark:text-dark-accent rounded hover:bg-light-accent/10 dark:hover:bg-dark-accent/10 transition-colors font-semibold">
-            View All Updates
-          </button>
-        </div>
-      </div>
     </section>
   );
 };
